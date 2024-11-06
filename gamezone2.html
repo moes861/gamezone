@@ -1,0 +1,1864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS Games</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&amp;family=Pacifico&amp;family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&amp;family=Roboto+Mono:ital,wght@0,100..700;1,100..700&amp;display=swap" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+
+  .menu-container {
+      position: relative; /* Relative positioning for dropdown */
+    }
+
+    /* Hamburger icon styling */
+    .menu-button {
+      background-color: transparent; /* No background */
+      border: none; /* No border */
+      cursor: pointer; /* Pointer cursor */
+      outline: none; /* No outline */
+      padding: 10px; /* Padding around button */
+      position: fixed; /* Fixed in the top-right corner */
+      top: 10px;
+      right: 10px;
+      z-index: 1000;
+    }
+
+    /* Three dashes */
+    .menu-button div {
+      width: 30px; /* Width of dashes */
+      height: 4px; /* Height of dashes */
+      background-color: #e60000; /* Red color */
+      margin: 6px 0; /* Space between dashes */
+      transition: 0.4s; /* Smooth transition */
+    }
+
+    /* Dropdown content */
+    .menu-content {
+      display: none; /* Hidden by default */
+      position: absolute; /* Absolute positioning */
+      right: 0; /* Align to the right */
+      background-color: white; /* Background color of dropdown */
+      min-width: 180px; /* Minimum width */
+      border-radius: 8px; /* Rounded corners */
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Shadow effect */
+      z-index: 1; /* Ensure it appears above other content */
+      margin-top: 10px; /* Space above dropdown */
+      opacity: 0; /* Start invisible */
+      transform: translateY(-10px); /* Start slightly above */
+     
+      transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+
+      position: fixed; /* Fixed in the top-right corner */
+      top: 10px;
+      right: 10px;
+      z-index: 1000;
+    }
+
+    /* Show dropdown content when active */
+    .menu-content.show {
+      display: inline-block; /* Show the dropdown */
+      opacity: 1; /* Fully visible */
+      transform: translateY(0); /* Move into position */
+      position: fixed; /* Fixed in the top-right corner */
+      top: 10px;
+      right: 10px;
+      z-index: 1000;
+    }
+
+    /* Links inside the dropdown */
+    .menu-content a {
+      color: #e60000; /* Red text */
+      padding: 12px 16px; /* Padding around links */
+      text-decoration: none; /* Remove underline */
+      display: block; /* Block display */
+      transition: background-color 0.3s ease; /* Smooth background color change */
+      border-radius: 6px; /* Rounded corners */
+      font-size: 15px; /* Font size */
+    }
+
+    /* Hover effect for dropdown links */
+    .menu-content a:hover {
+      background-color: #f2f2f2; /* Light grey on hover */
+    }
+
+
+.aa{display: none; }
+.bb{display: none;}
+.cc{display: none;}
+.dd{display: none;}
+.ss{text-align: center;}
+
+
+
+
+.popup {
+            display: none; /* Hidden by default */
+            position: fixed; /* Position fixed to center on the screen */
+            z-index: 1; /* Sit on top */
+            background-color: #fefefe; /* White background */
+            border: 1px solid #888; /* Border */
+            padding: 20px; /* Padding */
+            width: 300px; /* Width of the popup */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow */
+            border-radius: 5px; /* Rounded corners */
+            top: 50%; /* Center vertically */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Adjust for exact center */
+        }
+        .popup p {
+            margin: 0; /* Remove default margin */
+            font-size: small; /* Font size */
+        }
+        .overlay {
+            display: none; /* Hidden by default */
+            position: fixed; /* Cover the entire screen */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            z-index: 0; /* Behind the popup */
+        }
+        .popup button {
+    display: block;
+    margin: 20px auto 0;
+    padding: 12px 25px;
+    background: #ff3e3e;
+    color: white;
+    border: none;
+    border-radius: 25px; /* More rounded corners */
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+}
+
+.popup button:hover {
+    background: #ff2525;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+}
+
+.popup button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
+
+#popup-category:hover {
+    color: #2eb6ff; /* Changes color on hover */
+    transition: color 0.1s ease;
+}
+#popup-additional:hover {
+    color: #2fc66b; /* Changes color on hover */
+    transition: color 0.1s ease;
+}
+#popup-release:hover {
+    color: #ce41f9; /* Changes color on hover */
+    transition: color 0.1s ease;
+}
+
+
+
+
+
+div[style*="padding: 10px"][style*="background: rgb(220,137,232)"] {
+        display: none !important; /* Hides the div */
+    }
+
+
+.sec-logo{position: relative; top: 27px;
+align-items: left;
+
+
+}
+header{max-width: 800px;
+justify-content: center; 
+margin: auto;
+
+}
+
+.categ{
+    font-size: 2em;
+            margin: 40px 0 20px;
+            text-align: center;
+            color: #000000;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+align-items: center;
+
+}
+.categ::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: #ff3e3e;
+        }
+
+
+        
+        h2 {
+  font-family: "Anton SC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+        body {
+            align-content: center;
+            width: 95%;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: inline-block;
+        }
+   
+.logo{
+display: flex;
+align-self: flex-end;
+position: relative ;  
+}
+
+        header+p{
+            display: flex;
+visibility: hidden;
+margin: 0;
+font-size: 5px;
+        }
+      
+
+
+        h2 {
+            font-size: large;
+            text-align: left;
+        
+            
+        }
+
+        h3{font-size: xx-large;
+text-align: center;
+
+
+
+
+
+        }
+        p {
+            color: #333; /* Dark grey for readability */
+    background-color: #f9f9f9; /* Light background */
+    padding: 10px;
+    border-radius: 5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            line-height: 1.6; /* Adds breathing room */
+    letter-spacing: 0.02em; /* Slight spacing for elegance */
+            font-size: small;
+            text-align: center;
+        margin: 2px;
+           
+        }
+        p:hover {
+    color:#ff3e3e; /* Changes color on hover */
+    transition: color 0.3s ease;
+}
+
+     .hard{
+        text-shadow: none;
+      color: hsl(0, 0%, 100%);
+text-align: center;
+line-height: 0.6; /* Adds breathing room */
+
+margin-top: 30px;
+background-color: #ffffff; /* Light background */
+     }
+
+     .hard:hover {
+    color:#000000; /* Changes color on hover */
+    transition: color 0.3s ease;
+}
+
+
+.hard{margin: 0;}
+
+ 
+        .search-bar {
+            display: block !important;
+            text-align: center;
+            margin-bottom: 20px;
+            margin-top: 20px;
+margin-left: 80px;
+margin-right: 80px;
+        }
+        .search-bar input {
+            padding: 10px;
+            width: 100%;
+            max-width: 400px;
+            font-size: 16px;
+            border: 2px solid red;
+            border-radius: 5px;
+            outline: none;
+        }
+        .games-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            
+        }
+     
+
+        .game {
+         
+            border: 2px solid #202020;
+            border-radius: 8px;
+            padding: 15px 10px 15px 10px ;
+            margin: 10px;
+           
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            transition: transform 0.2s;
+        }
+        .game:hover {
+            transform: scale(1.10);
+        }
+        .game img {
+           
+            position: relative;
+            align-self: flex-end;
+            bottom: 0;
+            max-width: 100%;
+            height:auto;
+            border-radius: 5px;
+        }
+        @media (max-width: 2000px) {
+
+
+            .game {
+                width: calc(15% - 40px);
+            }
+        @media (max-width: 800px) {
+            .game {
+                width: calc(30% - 40px);
+            }
+        @media (max-width: 600px) {
+            .game {
+                width: calc(30% - 40px);
+            }
+        }
+       
+        }
+        @media (max-width: 500px) {
+            .game {
+                width: calc(32% - 40px);
+            }
+            @media (max-width: 500px) {
+            header {
+                display: block;
+            }
+        }
+
+    </style>
+<script defer="" data-domain="gmaezone-games.tiiny.site" src="https://analytics.tiiny.site/js/plausible.js"></script><script type="text/javascript" src="https://tiiny.host/ad-script.js">
+    window.onload = function() {
+    var scripts = document.querySelectorAll('script[src="https://analytics.tiiny.site/js/plausible.js"]');
+    scripts.forEach(function(script) {
+        script.parentNode.removeChild(script);
+    });
+};
+
+    window.onload = function() {
+        // Select the div by its inline style
+        const adDivs = document.querySelectorAll('div[style*="padding: 10px"][style*="background: rgb(220,137,232)"]');
+        adDivs.forEach(function(adDiv) {
+            adDiv.parentNode.removeChild(adDiv); // Remove the div
+        });
+    };
+
+
+
+    function toggleSidebar() {
+           const sidebar = document.getElementById("sidebar");
+           const overlay = document.getElementById("overlay");
+           const menuIcon = document.querySelector(".menu-icon");
+           sidebar.classList.toggle("show-sidebar");
+           overlay.classList.toggle("show-overlay");
+           menuIcon.classList.toggle("active");
+       }
+    </script>
+
+    <link rel="icon" href="https://as2093.com/wp-content/uploads/2020/01/square_logo.png" type="image/x-icon">
+    <script defer="" data-domain="gmaezone-games.tiiny.site" src="https://analytics.tiiny.site/js/plausible.js"></script><script type="text/javascript" src="https://tiiny.host/ad-script.js"></script>
+</head>
+
+
+
+
+
+
+
+<body>
+    
+    <div class="menu-content" id="dropdownMenu">
+      <a href="gamezone.html">PC Games</a>
+      <a href="gamezone2.html">PS Games</a>
+      <a href="programs.html">Programs</a>
+    </div>
+  </div><header>  
+    
+    <div class="menu-container">
+    <button class="menu-button" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </button>
+    <div class="menu-content" id="dropdownMenu">
+      <a href="gamezone.html">PC Games</a>
+      <a href="gamezone2.html">PS Games</a>
+      <a href="programs.html">Programs</a>
+    </div>
+  </div>
+    
+    
+    
+    <div class="search-bar">
+      
+      <img src="https://as2093.com/wp-content/uploads/2020/01/square_logo.png" alt="logo" class="logo" style="display:inline-block ; position: relative;top: 10px; ">
+      <img src="https://as2093.com/wp-content/uploads/2020/03/company_name.png" alt="sec-logo"width="225" height="62" class="sec-logo " style="display: inline-block; margin: 10px;">
+      <input type="text" id="search" placeholder="Search for a game..." style="display: inline-block;">
+     
+
+  </div>
+    
+    
+    </header>
+
+    <h3 class="categ">PS4 GAMES</h3>
+    <div class="games-container">
+    
+    
+
+               
+
+        <div class="game" onclick="showPopup(event, this)"> 
+            <img src="https://3.bp.blogspot.com/-LyO6HRchD2w/XxZnpisURCI/AAAAAAAAEYo/dIhXD0pPDgc0KYLPG6WRD9pcdHn2mAlUACLcBGAsYHQ/s1600/4.jpg">
+            <h2>Ace Combat 7: Skies Unknown</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: طيران حربي</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: لعبة طيران حربي تقدم تجربة قتالية مدهشة مع طائرات حقيقية ومهمات مثيرة.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 50 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-xlKJR_pkk_I/ZkRDDnUwQ5I/AAAAAAAAAB4/eFFPrCVLRRMpwYRCweSyFKBzH-MhBVjxACNcBGAsYHQ/s0/35.jpg">
+<h2>Arise: A Simple Story</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تجربة تفاعلية تركز على سرد القصص والتفاعل مع العالم المحيط.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 4 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-_JHsQM5pw84/ZSC5K1te-1I/AAAAAAAADGA/H_bwsj4AducJVYVB2p8qcg4ePSj83n33gCNcBGAsYHQ/s0/9.jpg">
+<h2>Assassin's Creed Mirage</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تعيد اللعبة تقديم تجربة الاغتيالات في بيئة تاريخية غامرة.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 40 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-Z0mh0wN8qnU/Ykq8GX67IBI/AAAAAAAAJWE/r3DJuJcoru8J9OVpnXMaXrd1lJDQZXBzACNcBGAsYHQ/s0/16.jpg">
+<h2>Assassin's Creed Odyssey</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تأخذك اللعبة في رحلة عبر اليونان القديمة مع عناصر RPG.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 45 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-NoiczF8V-0s/YtjTFS6u2uI/AAAAAAAAKKo/7RD_SQxkqQkwJ7QfYrEnai5RoZbxTdGBwCNcBGAsYHQ/s0/1.jpg">
+<h2>Assassin's Creed Valhalla</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تجربة ملحمية كفايكنغ في بيئة مفتوحة مع قصص غنية.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 60 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-MKINakyofdM/YbqI6JAPdQI/AAAAAAAAME0/DeQlSeoOKQURT9WPTY7y3dyRCbO87gSnwCNcBGAsYHQ/h300/9.jpg">
+<h2>AW Remastered</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: نسخة محسنة من اللعبة الأصلية تقدم رسومات أفضل وأسلوب لعب محسن.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 12 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-BWOXkMykc5o/XxMJDJcx2xI/AAAAAAAAEMQ/AaZRG4g7NFIoA8hE0JX7iLnThRgGCXPcgCLcBGAsYHQ/s1600/13.jpg">
+<h2>Battlefield V</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / حربية</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تجربة حربية غامرة خلال الحرب العالمية الثانية مع معارك ضخمة.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 50 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-l_nP7TzdAAQ/ZkRDIDDcnJI/AAAAAAAAADQ/_1iXGI4EojYEQR5r1gK8IZwhavOyQ_LmwCNcBGAsYHQ/s0/8.jpg">
+<h2>Ben 10: Power Trip</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: لعبة مستوحاة من المسلسل الشهير، حيث يتحكم اللاعب في شخصية بن 10 في مغامرات ملحمية.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 5 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://3.bp.blogspot.com/-XfSnhmWQQb8/W0GtC4LCXiI/AAAAAAAANiE/r4sjWyRu6pYnbP0-sCi1R8gwDe9aYQchwCLcBGAs/s1600/5.jpg">
+<h2>Brawlhalla</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: قتال</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: لعبة قتال مجانية تقدم قتالًا جماعيًا مع مجموعة متنوعة من الشخصيات.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 5 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-YLq0iNIpMlM/WsD_v1ED9JI/AAAAAAAAEzg/MNGWQs0JIY0F-gCX6embcVccC0sTQGQyACLcBGAs/s1600/40.jpg">
+<h2>Brothers: A Tale of Two Sons</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: مغامرات / ألغاز</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: لعبة فريدة تروي قصة أخوين في مغامرة مع التركيز على التعاون.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 3 GB</p>
+    </div>
+
+
+    <div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-uEYYYsj0HFo/Xx5t0OHxHdI/AAAAAAAAACg/a4F5sLmoNuEdfHZn0R4d18qnjIzFibpbACLcBGAsYHQ/s1600/2.jpg">
+<h2>Borderlands 3</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: VR / مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تتميز اللعبة بأسلوب اللعب السريع الذي يجمع بين القتال المتواصل والمهام المختلفة. يمكن للاعبين اختيار أحد الشخصيات الأربعة، لكل منها مهارات فريدة، مثل القتال عن قرب أو استخدام الأسلحة المتقدمة. تحتوي اللعبة على مجموعة واسعة من الأسلحة والمعدات، مما يتيح تخصيص تجربة اللعب. تضم اللعبة أيضًا عوالم متنوعة ومليئة بالتفاصيل، وتقدم تجربة لعب فردية أو تعاونية عبر الإنترنت..</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 75 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-MveW2zPxQUY/ZkRQi5r8HqI/AAAAAAAAAKE/MtjUVyKOxcU5ab2uFZj5j74U8rR8QL2GQCNcBGAsYHQ/s0/50.jpg">
+<h2>Budget Cuts VR</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: VR / مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: لعبة واقع افتراضي تقدم تجربة فريدة من نوعها في التخفي والتسلل.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 5 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://3.bp.blogspot.com/-hGEydETzxcM/WorbkboML4I/AAAAAAAALPU/9LUCGLsQOeICsbNBRAFX6-Egm1Zl-GJugCLcBGAs/s1600/10.jpg">
+<h2>Call of Duty: Black Ops III</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / حربية</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تجربة مثيرة من سلسلة كول أوف ديوتي مع وضع اللعب الجماعي المحسن.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 100 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-m96lQGqMgL0/X6LF9FaPkGI/AAAAAAAAHUs/-C2r2KwmHbw-uh4lrMeeujoc-IQGbh0agCLcBGAsYHQ/s0/z1.jpg">
+<h2>Car Mechanic Simulator</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: محاكاة</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: محاكاة إصلاح السيارات توفر تجربة واقعية في ميكانيكا السيارات.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 5 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-RbGf7ueMlvA/ZfUCvIKcQ6I/AAAAAAAAFus/0zWDFEJ4jN4H8GrZN3K9s44DWa5DMw6hACNcBGAsYHQ/s0/1.jpg">
+<h2>Control</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تجربة فريدة من نوعها مع عناصر خارقة في بيئة غامضة.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 30 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-DKKNWpQ_lOw/ZkRC9gZbmOI/AAAAAAAAAAY/Yty6Opmf1W4jNmJmbV9NP2-MKIb96zdSQCNcBGAsYHQ/s0/11.jpg">
+<h2>Crash Bandicoot 4: It's About Time</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: منصات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تعود سلسلة كراش مع مغامرات جديدة وتحديات مثيرة.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 30 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-6zq0YJ96CcY/ZfkDPkxY20I/AAAAAAAAFzM/Qh-8f_9Xghw8LWHNhf_5splLUGEG7NE6wCNcBGAsYHQ/s0/35.jpg">
+<h2>Crash Bash</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: حلبة قتال</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: لعبة حلبة قتال ممتعة مع شخصيات كراش المعروفة.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 1 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://2.bp.blogspot.com/-3Y_5hCXrgxw/XxUVCLzpc8I/AAAAAAAAETg/rsIrjcqS_PgBfusVfXlmRb-0-qYr-ACoACLcBGAsYHQ/s1600/11.jpg">
+<h2>Crash Team Racing</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: سباقات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تجربة سباق ممتعة مع شخصيات كراش في بيئات متنوعة.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 18 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-HOtSUcZ-61k/YJGLVokg3hI/AAAAAAAAcHY/TRL55C5TgdAfq3Jh8pAfBY7TPsXZPMj5ACLcBGAsYHQ/s0/3.jpg">
+<h2>Crysis Remastered</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: نسخة محسنة من اللعبة الكلاسيكية تقدم رسومات مذهلة وتجربة لعب قوية.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 10 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-NEkRYqZEV8s/YucwVQM1V4I/AAAAAAAAKMI/aWpuRs2X_wk_1JtwtVI3AOAGhcRuqgVLQCNcBGAsYHQ/s0/2.jpg">
+<h2>Cuphead</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: منصات / أكشن</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: لعبة فريدة من نوعها بأسلوب فني مستوحى من الرسوم المتحركة القديمة.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 4 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-VLfWaFELuBg/ZkRC-VZJz3I/AAAAAAAAAAc/nH0dl11os_A_zCWwYc-hoIkctuiIcPpzQCNcBGAsYHQ/s0/13.jpg">
+<h2>Cyberpunk 2077</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / RPG</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تجربة خيالية في عالم مستقبلي مليء بالخيارات والتفاعلات.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 70 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-rjcEWVaQtlw/X-dMRZlKJtI/AAAAAAAAaxs/c-JDkSIJXu8CgevYpBtHXMoTcT4n8M9BgCLcBGAsYHQ/s0/9.jpg">
+<h2>Darksiders Genesis</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: لعبة تقدم مغامرات جديدة مع شخصيات مألوفة من السلسلة.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 15 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://3.bp.blogspot.com/-pAFa_-cOnac/WsEHT7Yo_7I/AAAAAAAAE1M/JkZOZceNYskX5KN2tjECO3wEFqwjuXUpQCLcBGAs/s1600/49.jpg">
+<h2>Darksiders II Deathinitive Edition</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: نسخة محسنة من اللعبة الأصلية تقدم تجارب جديدة ومرئيات أفضل.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 20 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://2.bp.blogspot.com/-HLc-kmA0DLg/XxL6oUW622I/AAAAAAAAEIw/opNeQoZ2SJMRC51KrSH6xhqq5INkD8LyQCLcBGAsYHQ/s1600/5.jpg">
+<h2>Days Gone</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تجربة البقاء على قيد الحياة في عالم مفتوح مليء بالزومبي.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 70 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-uKmcsJwnSf8/ZEPyct-UmuI/AAAAAAAABO4/hOjTOi5xPfk0IOokTgtDfJM0GLtnZZRfgCNcBGAsYHQ/s0/1.jpg">
+<h2>Dead Island 2</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / زومبي</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تتمحور اللعبة حول القتال ضد الزومبي في عالم مفتوح.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 25 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-k66SLWfn6jw/Ykazq0PXORI/AAAAAAAAI7w/s2fSbRIWmC0lm-YFLTHsJYIiKff-h-IQQCNcBGAsYHQ/s0/1.jpg">
+<h2>Dead or Alive 6</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: قتال</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: لعبة قتال مشهورة مع شخصيات متنوعة ومعارك مثيرة.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 30 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://3.bp.blogspot.com/-gAuMxxBirzs/XxLwsXVQEHI/AAAAAAAAEHE/ZOPNWTpYYLox1F9hY_xBnqAR4SEqtQKbACLcBGAsYHQ/s1600/1.jpg">
+<h2>Detroit: Become Human</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: لعبة تعتمد على اتخاذ القرارات في عالم مستقبلي مليء بالروبوتات.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 50 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://2.bp.blogspot.com/-uSOwAk_fliY/X1B_jDjCcYI/AAAAAAAAGwQ/ae7NIgw8qfA-82yMBVoWpOKk_IA4ouswgCLcBGAsYHQ/s1600/0.jpg">
+<h2>Devil May Cry 5</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: عودة شخصية "دانتي" في مغامرة جديدة مع قتال مثير.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 35 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-K-m1suhGMuk/ZkRQgU7AEyI/AAAAAAAAAJc/JMT93bRWhLgUuOH-DgGJHewx4pCmJd4IgCNcBGAsYHQ/s0/40.jpg">
+<h2>Dirt 5</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: سباقات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تجربة سباقات مثيرة على الطرق الوعرة مع وضع لعب جماعي.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 40 GB</p>
+    </div>
+
+
+    <div class="game" onclick="showPopup(event, this)">
+    <img src="https://2.bp.blogspot.com/-gwc2Aht_UIQ/X04nLLIEQ9I/AAAAAAAAGts/BIKn7f7cbXQbejcwc0Ssjo-taMnrjCsUACLcBGAsYHQ/s1600/3.jpg">
+<h2>Dragon Ball Xenoverse 2 Deluxe Edition</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: قتال</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: في هذه النسخة الفاخرة، يحصل اللاعبون على محتوى إضافي يشمل شخصيات جديدة، ملابس، ومهام إضافية من المواسم السابقة. تمتاز اللعبة بنظام قتال متنوع، حيث يمكن للاعبين استخدام تقنيات القتال المختلفة مثل الكايميهاميها والقدرات الخاصة الفريدة لكل شخصية. يمكن للاعبين أيضًا الانضمام إلى مهام تعاونية مع لاعبين آخرين في وضع اللعب الجماعي أو التنافس في مباريات فردية.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 20 GB</p>
+    </div>
+
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-SlgM5mxfv5Q/X97SNG627oI/AAAAAAAAIGs/1kICt75lIdw2J5Zu5QG6QZCNwGaCgT-9ACLcBGAsYHQ/s0/0.jpg">
+<h2>DOOM Eternal</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / إطلاق نار</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تجربة إطلاق نار سريعة ومكثفة في عالم مفعم بالوحوش.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 20 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-KgAemkAMTRQ/Zjw2P2lU0xI/AAAAAAAAG0A/-abITB_KmK0IXtOqsIfjL0IPlW9AZF7_gCNcBGAsYHQ/s0/3%2B%2528Copy%2529.jpg">
+<h2>Dying Light 2: Stay Human</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / زومبي</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: لعبة بقاء في عالم مفتوح مليء بالزومبي مع عناصر من RPG.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 50 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-vYG5Bq_my7E/ZRhXD7qR_FI/AAAAAAAADAk/eHsklluJwiMuBmo_O3Y_Tx019k5O6wgSACNcBGAsYHQ/s0/1.jpg">
+<h2>EA SPORTS FC 24</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: رياضة</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: لعبة كرة قدم توفر تجربة واقعية مع فرق ولاعبين حقيقيين.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 30 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://dlpsgame.com/wp-content/uploads/2024/09/1-21.jpg">
+<h2>EA SPORTS FC 25</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: رياضة</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: أحدث نسخة من لعبة كرة القدم مع ميزات جديدة.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 30 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-VRLyIPR4SNs/ZkRC9QJ1IRI/AAAAAAAAAAQ/QFtYD9Yd2PYBxAjPcFNRsVUI0yxc4XItwCNcBGAsYHQ/s0/1.jpg">
+<h2>EA SPORTS UFC 4</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: رياضة</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تجربة قتال MMA مع شخصيات وأسلوب لعب متميز.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 25 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://4.bp.blogspot.com/-F0JAlizdMBo/XxzR2YfCh-I/AAAAAAAAEpI/XXOtpPArVHouvMg23UK8ba9rHIhOOFVNwCLcBGAsYHQ/s1600/10.jpg">
+<h2>eFootball 2020</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: رياضة</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: لعبة كرة قدم مجانية تقدم تجربة لعب واقعية.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 20 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-zbmSMbItLsE/YcEfSLM6GzI/AAAAAAAAMZo/Zp_VXYdcrHYYGp9cDNqx3M94RMFpf569gCNcBGAsYHQ/h300/9.jpg">
+<h2>eFootball 2022</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: رياضة</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: أحدث نسخة من لعبة كرة القدم تقدم تحسينات ملحوظة.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 30 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/--rTCsMki-_A/ZkRDApLxJDI/AAAAAAAAAA8/qFuDKy_35WIwo5apIerg48Ql4e8rYB0ogCNcBGAsYHQ/s0/2.jpg">
+<h2>eFootball PES 2021</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: رياضة</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تجربة كرة قدم مميزة مع التركيز على الواقعية.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 30 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-B9erxXe5MKc/ZnTgMSP_s0I/AAAAAAAAHbk/LO9uQz7immYeXp3nft0cybZfC9yal-KaQCNcBGAsYHQ/s0/1.jpg">
+<h2>Elden Ring</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / RPG</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: لعبة خيالية مفتوحة تقدم عالمًا ضخمًا مليئًا بالمغامرات والتحديات.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 50 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-ChK8huUpOzU/YbsyLDfJQ5I/AAAAAAAAMJg/z6Ztbn_CZWM8uWbyQZT9zZVEjDxwMup7QCNcBGAsYHQ/h300/1-1.jpg">
+<h2>Far Cry 6</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تجربة مثيرة في عالم مفتوح مليء بالمغامرات والمعارك.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 50 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-Z-D2x8mm6-U/X2xTbb810SI/AAAAAAAAEwA/6OowBRuIZpQU713k8bDGCtDbwl1R_iyOwCLcBGAsYHQ/s0/3.jpg">
+<h2>Far Cry New Dawn</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: لعبة مليئة بالمغامرات في عالم ما بعد الكارثة.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 35 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-mcyC_vLdrWE/ZkRQhTxuuSI/AAAAAAAAAJs/AoIlJg2DLfsOiMF9UN7afmG5YQVto86vwCNcBGAsYHQ/s0/45.jpg">
+<h2>FIFA 21</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: رياضة</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تجربة كرة قدم محورية مع أساليب لعب جديدة.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 50 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-lS4wQELMA8w/Ye911Ka4LqI/AAAAAAAActc/gF3dFgV9jZobbO3Ssj12h5vysY0lTqk_wCNcBGAsYHQ/s0/q.jpg">
+<h2>FIFA 22</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: رياضة</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تجربة كرة قدم جديدة تقدم ميزات مبتكرة.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 50 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-OOJC26CZqM8/YzeZaImmSyI/AAAAAAAAKs8/tj0Hz_VFIywxQz8S-6EgrDot8gYOYdZgQCNcBGAsYHQ/s0/1.jpg">
+<h2>FIFA 23</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: رياضة</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: أحدث إصدار من سلسلة FIFA مع تحسيات ملحوظة.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 50 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://4.bp.blogspot.com/-twn-dxOVczE/WxFtaTxlttI/AAAAAAAALt8/jASvi0gzsckbWDY86-wNRN9HE3BHB4RXACLcBGAs/s1600/50.jpg">
+<h2>Gang Beasts</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: قتال / جماعي</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: لعبة قتال ممتعة مع شخصيات غريبة ومعارك طريفة.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 2 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-3cmPn_gQhbg/YbrDSE17w0I/AAAAAAAAMFM/3OL8pVFiNkcxeF25PEcTt4oqpLgBj6kgACNcBGAsYHQ/h300/7.jpg">
+<h2>Ghost of Tsushima</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تجربة تاريخية في اليابان الإقطاعية مع قصة ملحمية.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 50 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://3.bp.blogspot.com/-SfFQKBSqHvA/Wxkz5l7iTHI/AAAAAAAAMXQ/9p-k9trjixYY75eDzTVP_bw-wdvAvKJcACLcBGAs/s1600/21.jpg">
+<h2>Goat Simulator</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: محاكاة</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: لعبة محاكاة مرحة تتيح لك تجربة حياة الماعز بطريقة غير تقليدية.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 2 GB</p>
+    </div>
+
+    <div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-zFl8BVScuhU/Y2xHbSowYCI/AAAAAAAAK3s/5cbtPfoUO9gAoL1u0f8veYL1GIpAUE-RQCNcBGAsYHQ/s0/1.jpg">
+<h2>God Of War Ragnarok</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف:RPG</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تبدأ القصة بعد أحداث اللعبة السابقة، حيث يكبر أتريوس ويتعلم المزيد عن أصوله ومصيره. يصبح الاثنان مضطرين للبحث عن إجابات بشأن النبوءات التي تشير إلى نهاية العالم، والتي قد تنطوي على مصير أتريوس كجزء من أسطورة الفايكنغ. يواجهان في رحلتهما تحديات كبرى، بما في ذلك مواجهة الآلهة الإسكندنافية مثل ثور وأودين.
+
+</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 90 GB</p>
+    </div>
+
+
+<div class="game"  onclick="showPopup(event, this)">
+    <img src="https://2.bp.blogspot.com/-zRx2k4AlTAQ/XxeUPWhKqHI/AAAAAAAAEbM/hSRuoAH98TkZ3jYRDnvG61XSoPACS6DKACLcBGAsYHQ/s1600/7.jpg" alt="">
+<h2>Grip</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: سباقات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تجربة سباق مثيرة في عالم مملوء بالمخاطر والتحديات.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 12 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://2.bp.blogspot.com/-tyO8AuHrkEk/W3PuhE1rCrI/AAAAAAAAOtE/xRpyFiBE4LUic6VdCHZJynKnIrd5lUfGQCLcBGAs/s1600/4.jpg">
+<h2>Grand Theft Auto III (GTA III)</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: لعبة عالم مفتوح تتيح لك القيام بجميع أنواع الأنشطة الإجرامية.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 1.5 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-0NM5DA2DYBQ/WoVTnacKUGI/AAAAAAAAKvs/26hRnXFxlRUG0xINxT_ZpBsFt2Ry4xSUgCLcBGAs/s1600/21.jpg">
+<h2>Grand Theft Auto V (GTA V)</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: واحدة من أفضل ألعاب العالم المفتوح تقدم تجربة غامرة مع مجموعة متنوعة من المهام.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 90 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://3.bp.blogspot.com/-7zLTgwwPqCY/WpONHvis95I/AAAAAAAAAfc/zNxjrToC-dsL0z8VDAJZZwuuZXduLu7fACLcBGAs/s1600/12.jpg">
+<h2>Grand Theft Auto: San Andreas (GTA SA)</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تجربة فريدة في عالم مفتوح مليء بالمغامرات والقصص المثيرة.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 4 GB</p>
+    </div>
+
+
+
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://3.bp.blogspot.com/-ylMXsneR8qk/WwwfzJfVkUI/AAAAAAAAK8E/CBsx_df7Vg8jeplvoo4USxe3OPVA9ujWwCLcBGAs/s1600/10.jpg">
+<h2>Horizon Zero Dawn</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: لعبة عالم مفتوح تأخذك في مغامرة عبر عالم مستقبلي مليء بالآلات.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 60 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://2.bp.blogspot.com/-PZ-w9J4DwQw/Xy1-uxevojI/AAAAAAAAA64/xlQanrJkaIEYSerIs4VyuuGcOh0alyYRACLcBGAsYHQ/s1600/5.jpg">
+<h2>Hollow Knight</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: منصات / مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: لعبة منصات تعتمد على الاستكشاف والقتال في عالم غامض.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 10 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://4.bp.blogspot.com/--tSsoBz_h00/WpjNl2-gmQI/AAAAAAAABNM/etIc9UZgXEU5n_SyzSfMUrsT2RoS0l_0ACLcBGAs/s1600/17.jpg">
+<h2>Journey</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تجربة فريدة تركز على الاستكشاف والسرد البصري.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 3 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://2.bp.blogspot.com/-gy9W3LvcgjU/Xxl0t_1wJ6I/AAAAAAAAEd4/rzF3elGymZAz3SlMhMfvp0GClzjGmz3ZACLcBGAsYHQ/s1600/3.jpg">
+<h2>Just Cause 4</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تجربة مثيرة مليئة بالمغامرات والانفجارات في عالم مفتوح.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 70 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-LWrGy7xIDtY/X9g0xwsSPUI/AAAAAAAAIBU/AYBOZlhm3kY-et-Fgt7Cgw_52kCVOD3MgCLcBGAsYHQ/s0/6.jpg">
+<h2>Kingdom Come: Deliverance</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / RPG</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تجربة تاريخية في عالم مفتوح مع نظام قتال واقعي.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 50 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-imYBsryQdZA/ZkRDEPQWXII/AAAAAAAAACI/zEQqk343pqA8SNRod7JkW7d_-XOptNORwCNcBGAsYHQ/s0/38.jpg">
+<h2>Little Nightmares II</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: رعب / مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تجربة مرعبة في عالم مظلم مليء بالألغاز.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 5 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://4.bp.blogspot.com/-cpJtmZxFNDU/XxMD5rp7ejI/AAAAAAAAEK8/xPOdW21CKpUPKggN69O55dTrihhbpqdUgCLcBGAsYHQ/s1600/10.jpg">
+<h2>Marvel's Spider-Man</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تجربة رائعة في عالم مفتوح كشخصية الرجل العنكبوت.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 40 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-3TS51lYon3Y/ZkRDB3753yI/AAAAAAAAABQ/YGf-nFlOJ8MNJhmuq9xpcI-kFgoXuOOaACNcBGAsYHQ/s0/25.jpg">
+<h2>Marvel's Spider-Man: Miles Morales</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: متابعة مغامرات شخصية مايلز موراليس في عالم الرجل العنكبوت.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 20 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-p-dPnGsaFAU/YkfD5weoDqI/AAAAAAAAJCg/MKWxqCugiMMSdXKjfJd0L9lD6glfRqZVgCNcBGAsYHQ/s0/20.jpg">
+<h2>Metro Exodus</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تجربة مثيرة تعتمد على السرد في عالم ما بعد الكارثة.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 50 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-1HExhbhQdC8/ZkRDFOp49OI/AAAAAAAAACU/T0xmmmnLiDsXK_nsu-qIzlHi07LnTafIQCNcBGAsYHQ/s0/4.jpg">
+<h2>Mortal Kombat 11</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: قتال</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تجربة قتال مع شخصيات مشهورة من السلسلة.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 50 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-xbbiG34JbR0/X_2Fd0a2osI/AAAAAAAAbJg/MQ-ubuCcUlMzdD9pGLumthSBgCpKqFX3wCLcBGAsYHQ/s0/1.jpg">
+<h2>Need for Speed Heat</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: سباقات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تجربة سباق مثيرة في عالم مفتوح مليء بالتحديات.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 40 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://3.bp.blogspot.com/--zO5pdTgS1g/X0XMIeWTP5I/AAAAAAAAGoo/CZIYh8LvwUgCM-jO0O1Ht-WXAlZi_yACACLcBGAsYHQ/s1600/6.jpg">
+<h2>Need for Speed Payback</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: سباقات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تجربة سباق تجمع بين القصة والتحديات في عالم مفتوح.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 30 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-MmG9UoYsk1o/X2xXhDkAqbI/AAAAAAAAEwM/iJ9lQksf_ZAVuDBFG3whJtv1cshUS8jgQCLcBGAsYHQ/s0/4.jpg">
+<h2>NieR: Automata</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / RPG</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تجربة خيالية مع قصة عميقة ونظام قتال متميز.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 50 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://2.bp.blogspot.com/-MpG0tq-TwRA/Xx4aUFPsDqI/AAAAAAAAEts/pOktAlZ92QIKgHWCE_8zX3tNPuB4vhBewCLcBGAsYHQ/s1600/1.jpg">
+<h2>Overcooked! 2</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: جماعي / محاكاة</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: لعبة طهي ممتعة تركز على التعاون بين اللاعبين.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 3 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://2.bp.blogspot.com/-Ehuu2E2B8cE/WowkYnusdbI/AAAAAAAALT4/Iad2ye2itwE3hBY6HRBCo1PKob30YLyiQCLcBGAs/s1600/27.jpg">
+<h2>Outlast</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: رعب</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تجربة رعب نفسية تعتمد على الاستكشاف والهروب.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 5 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-U04X1V1yK54/XxMBFYA7j8I/AAAAAAAAEKg/HU5FdVpiRkkOCcVqEs4Rl7Sxv0P2GtSHQCLcBGAsYHQ/s1600/9.jpg">
+<h2>Red Dead Redemption 2</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تجربة غامرة في عالم الغرب الأمريكي مع قصة ملحمية.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 150 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://2.bp.blogspot.com/-ArSxWymNDZI/XxL8Rq-4OXI/AAAAAAAAEJM/CzY09SeVzHMvJ_dTXG6SVyopdtm-8omLQCLcBGAsYHQ/s1600/6.jpg">
+<h2>Resident Evil 2</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: رعب / بقاء</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: إعادة تصور اللعبة الكلاسيكية مع رسومات محسنة وتجربة رعب مثيرة.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 26 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://dlpsgame.com/wp-content/uploads/2024/10/1-13.jpg">
+<h2>Resident Evil Village</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: رعب / بقاء</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تجربة رعب جديدة في عالم مفعم بالتوتر والتحديات.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 27 GB</p>
+    </div>
+
+
+
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://3.bp.blogspot.com/-3I7AGq5Ajpk/Xxz0ohFy96I/AAAAAAAAEq0/BYm8uQNbb20SI7smRy0iK23zLv_Ze8IWACLcBGAsYHQ/s1600/4.jpg">
+<h2>Shadow of the Tomb Raider</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: مغامرات جديدة مع لارا كرافت في عالم مليء بالألغاز.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 40 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-cazUfQkpjWM/YksNr1jN1wI/AAAAAAAAJZQ/WegQrRvO9Awg-aVAjj5IYMNkQGxmIsKLgCNcBGAsYHQ/s0/6.jpg">
+<h2>Star Wars Jedi: Fallen Order</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تجربة مغامرات مثيرة في عالم ستار وورز.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 55 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://4.bp.blogspot.com/-eq73hvkRu3I/WpOGvfMN7EI/AAAAAAAAAcg/H8U9njGzpgwFIHSCvnNF_44a25Y-__jxQCLcBGAs/s1600/2.jpg">
+<h2>Street Fighter V</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: قتال</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تجربة قتال كلاسيكية مع مجموعة متنوعة من الشخصيات.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 50 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://4.bp.blogspot.com/-Q7KHTA3u7po/WtR6-qbK6vI/AAAAAAAAGAk/keWBW2RTi_sX6_MZDU0MlSp3GPLMwouQgCLcBGAs/s1600/60.jpg">
+<h2>The Witcher 3: Wild Hunt</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / RPG</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تجربة خيالية مذهلة في عالم مفتوح مع قصة معقدة.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 50 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://3.bp.blogspot.com/-yUPVCcD3ENU/WoVnrNFgzzI/AAAAAAAAK14/SZuE0BlsJIA8w1V-OJlwGCBm7k7pTDUwACLcBGAs/s1600/44.jpg">
+<h2>Tomb Raider</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: مغامرات جديدة مع لارا كرافت في عالم مليء بالتحديات.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 30 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://3.bp.blogspot.com/-VepWMqqHs_Q/WoVoat4-giI/AAAAAAAAK2Q/NBhT-NdTqqIWJpI5_V6I0KBINLOD1llZgCLcBGAs/s1600/45.jpg">
+<h2>Uncharted 4: A Thief's End</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: مغامرة مثيرة في عالم مليء بالكنوز والأسرار.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 40 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-NoiczF8V-0s/YtjTFS6u2uI/AAAAAAAAKKo/7RD_SQxkqQkwJ7QfYrEnai5RoZbxTdGBwCNcBGAsYHQ/s0/1.jpg">
+<h2>Valhalla: Assassin's Creed</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: تجربة تاريخية غامرة في عالم الفايكنغ.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 60 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://1.bp.blogspot.com/-Fx5KO8WFTKY/ZkRC-xF73fI/AAAAAAAAAAg/9hLSm36E6wINY4K3GrbQdkRBYeuyFr-cwCNcBGAsYHQ/s0/15.jpg">
+<h2>Watch Dogs: Legion</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: لعبة عالم مفتوح تسمح لك بالتحكم في شخصيات متعددة في لندن المستقبلية.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 50 GB</p>
+    </div>
+
+
+<div class="game" onclick="showPopup(event, this)">
+    <img src="https://4.bp.blogspot.com/-jGWvLy9peKU/XxQtwYfLB_I/AAAAAAAAEPE/HVMpxNnr_0Ys7Dvdv32ohhuzV7p3D-VVQCLcBGAsYHQ/s1600/4.jpg">
+<h2>World War Z</h2> 
+<p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / زومبي</p>
+<p class="bb" dir="rtl" lang="ar">الوصف: لعبة بقاء تعتمد على التعاون في مواجهة الزومبي.</p>
+<p class="cc"></p>
+<p class="dd"></p>
+<p class="ss">Size: 30 GB</p>
+    </div>
+
+
+
+    <div class="game"  onclick="showPopup(event, this)">
+        <img src="https://2.bp.blogspot.com/-NkwbnfTUJxE/XxzU6em3iWI/AAAAAAAAEqE/rjRfIHByPfE7nOPDlsaBZvJnbTfjdtfMwCLcBGAsYHQ/s1600/12.jpg">
+        <h2>MediEvil</h2>
+
+        <p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+        <p class="bb" dir="rtl" lang="ar">الوصف: مغامرة كلاسيكية من عصور الوسطى مع البطل الهيكل العظمي سير دانيل.</p>
+        <p class="cc"></P>
+       <P class="dd"></p>
+        <p class="ss">Size: 21 GB</p>
+    </div>
+    
+
+    <div class="game"  onclick="showPopup(event, this)">
+        <img src="https://1.bp.blogspot.com/-F5U0c21pCFQ/YA78b0jFPMI/AAAAAAAAbSQ/srmdZe-8_tMK2SsC5Zsc1RyrcJTYQ_7CACLcBGAsYHQ/s0/2.jpg">
+   
+        <h2>Minecraft Dungeons</h2>
+     <p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / RPG</p>
+        <p class="bb" dir="rtl" lang="ar">الوصف: مغامرة في زنزانات ماينكرافت مليئة بالتحديات والأعداء.</p>
+        <p class="cc"></P>
+       <P class="dd"></p>
+        <p class="ss">Size: 6 GB</p>
+    </div>
+    
+
+    <div class="game"  onclick="showPopup(event, this)">
+        <img src="https://2.bp.blogspot.com/-kmTV5QT-GRw/WpjPAT5OvWI/AAAAAAAABNk/QwE1x2Z3K2sqtDBUoI0ORvLwiXBLjidBwCLcBGAs/s1600/19.jpg">
+  
+        <h2>Minecraft</h2>
+      <p class="aa" dir="rtl" lang="ar">التصنيف: بقاء / بناء</p>
+        <p class="bb" dir="rtl" lang="ar">الوصف: لعبة إبداعية لبناء العوالم واستكشافها مع إمكانية اللعب الجماعي.</p>
+        <p class="cc"></P>
+       <P class="dd"></p>
+        <p class="ss">Size: 1 GB</p>
+    </div>
+    
+
+    <div class="game"  onclick="showPopup(event, this)">
+        <img src="https://1.bp.blogspot.com/-6W0KnJba1Nw/YbxhPrI0BhI/AAAAAAAAMO0/wDH4PQHYNTs2oU6o7AOWL7Kju8NaW0udACNcBGAsYHQ/h300/10.jpg">
+
+        <h2>Nickelodeon All-Star Brawl</h2>
+        <p class="aa" dir="rtl" lang="ar">التصنيف: قتال / متعددة اللاعبين</p>
+        <p class="bb" dir="rtl" lang="ar">الوصف: لعبة قتال ممتعة مع شخصيات نكلوديون الشهيرة.</p>
+        <p class="cc"></P>
+       <P class="dd"></p>
+        <p class="ss">Size: 9 GB</p>
+    </div>
+    
+
+    <div class="game"  onclick="showPopup(event, this)">
+        <img src="https://1.bp.blogspot.com/-eJGx-MyyHAw/ZTM2sCteyPI/AAAAAAAADOc/sOY5T5iTTZcDIFxVhbWw0LM9UoPyHJt5wCNcBGAsYHQ/s0/3.jpg">
+   
+        <h2>Red Dead Redemption</h2>
+     <p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+        <p class="bb" dir="rtl" lang="ar">الوصف: لعبة مغامرات تحكي قصة الانتقام في بيئة غربية مفتوحة.</p>
+        <p class="cc"></P>
+       <P class="dd"></p>
+        <p class="ss">Size: 20 GB</p>
+    </div>
+    
+
+    <div class="game"  onclick="showPopup(event, this)">
+        <img src="https://1.bp.blogspot.com/-mLQwHsy9ckM/X9zOMcdcSsI/AAAAAAAAID0/aXBV3PWFFjsex6TuzuzbKRFfwuvwfmiXgCLcBGAsYHQ/s0/2.jpg">
+   
+        <h2>Resident Evil 3</h2>
+     <p class="aa" dir="rtl" lang="ar">التصنيف: رعب / بقاء</p>
+        <p class="bb" dir="rtl" lang="ar">الوصف: إعادة تصور للعبة الرعب الكلاسيكية في عالم مليء بالزومبي.</p>
+        <p class="cc"></P>
+       <P class="dd"></p>
+        <p class="ss">Size: 23 GB</p>
+    </div>
+    
+
+    <div class="game"  onclick="showPopup(event, this)">
+        <img src="https://1.bp.blogspot.com/-mO89dvXdmhg/ZB0njRKLJkI/AAAAAAAAAxs/WN6TF8M7rck7YCrKnvi8hoC9blu3Jea_QCNcBGAsYHQ/s0/4.jpg">
+   
+        <h2>Resident Evil 4</h2>
+     <p class="aa" dir="rtl" lang="ar">التصنيف: رعب / بقاء</p>
+        <p class="bb" dir="rtl" lang="ar">الوصف: إعادة تقديم لأحد أفضل ألعاب الرعب التي تركز على القتال والبقاء.</p>
+        <p class="cc"></P>
+       <P class="dd"></p>
+        <p class="ss">Size: 28 GB</p>
+    </div>
+    
+
+    <div class="game"  onclick="showPopup(event, this)">
+        <img src="https://1.bp.blogspot.com/-PMTKzKpApIg/WoVj97gZpsI/AAAAAAAAK0Y/Rbb6M-z_pfAvU-hzxqV5L4UVh4BdB15KACLcBGAs/s1600/38.jpg">
+  
+        <h2>Rise of the Tomb Raider: 20 Year Celebration</h2>
+      <p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+        <p class="bb" dir="rtl" lang="ar">الوصف: مغامرة مع لارا كروفت تستكشف فيها أماكن أثرية مذهلة.</p>
+        <p class="cc"></P>
+       <P class="dd"></p>
+        <p class="ss">Size: 25 GB</p>
+    </div>
+    
+
+    <div class="game"  onclick="showPopup(event, this)">
+        <img src="https://1.bp.blogspot.com/-RE6gxgYxadk/Ykf_O9WhBjI/AAAAAAAAJHE/9xRjq1pY-3UskzGj43KHkxv2DvJ9ITG6gCNcBGAsYHQ/s0/14.jpg">
+  
+        <h2>Rocket League</h2>
+      <p class="aa" dir="rtl" lang="ar">التصنيف: رياضة / سباقات</p>
+        <p class="bb" dir="rtl" lang="ar">الوصف: لعبة كرة قدم تجمع بين السيارات والسباقات في تجربة ممتعة.</p>
+        <p class="cc"></P>
+       <P class="dd"></p>
+        <p class="ss">Size: 10 GB</p>
+    </div>
+    
+
+    <div class="game"  onclick="showPopup(event, this)">
+        <img src="https://2.bp.blogspot.com/-LhVHBj0jp-s/XxeVA5YfAnI/AAAAAAAAEbk/rrGvX1x2i_8nolzHBYH-fzvIvo81fRzgACLcBGAsYHQ/s1600/8.jpg">
+
+        <h2>Sekiro: Shadows Die Twice</h2>
+        <p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+        <p class="bb" dir="rtl" lang="ar">الوصف: تجربة صعبة ومليئة بالتحديات في عالم ياباني تقليدي.</p>
+        <p class="cc"></P>
+       <P class="dd"></p>
+        <p class="ss">Size: 13 GB</p>
+    </div>
+    
+
+    <div class="game"  onclick="showPopup(event, this)">
+        <img src="https://1.bp.blogspot.com/-Yqfo6Eu3zeM/YrqGoCC53qI/AAAAAAAAJ_s/nIqP23LYQNgJRqidrP2EcLJ1HZE5REIewCNcBGAsYHQ/s0/0.jpg">
+   
+        <h2>Sifu</h2>
+     <p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / قتال</p>
+        <p class="bb" dir="rtl" lang="ar">الوصف: تجربة قتال تركز على الفنون القتالية في قصة انتقامية.</p>
+        <p class="cc"></P>
+       <P class="dd"></p>
+        <p class="ss">Size: 20 GB</p>
+    </div>
+    
+
+    <div class="game"  onclick="showPopup(event, this)">
+        <img src="https://1.bp.blogspot.com/-5wtCr6INGNM/XyWLJXgKhpI/AAAAAAAAAa0/-rqfQyNXxbEWcagc_xG-1-KMcNR3YFlOACLcBGAsYHQ/s1600/8.jpg">
+
+        <h2>Slime Rancher</h2>
+        <p class="aa" dir="rtl" lang="ar">التصنيف: محاكاة / مغامرات</p>
+        <p class="bb" dir="rtl" lang="ar">الوصف: لعبة استكشاف وتربية للمخلوقات اللطيفة في عالم مفتوح.</p>
+        <p class="cc"></P>
+       <P class="dd"></p>
+        <p class="ss">Size: 1 GB</p>
+    </div>
+    
+
+    <div class="game"  onclick="showPopup(event, this)">
+        <img src="https://1.bp.blogspot.com/-dGXq0O8OHgs/Ysz62MHsgLI/AAAAAAAAmAc/iOB8oNcWkVIE0wYzuidCXWmfKk7XacUpgCNcBGAsYHQ/s0/2.jpg">
+   
+        <h2>Sniper Elite 5</h2>
+     <p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / تكتيك</p>
+        <p class="bb" dir="rtl" lang="ar">الوصف: لعبة تصويب تعتمد على تكتيكات القنص في الحرب العالمية الثانية.</p>
+        <p class="cc"></P>
+       <P class="dd"></p>
+        <p class="ss">Size: 80 GB</p>
+    </div>
+    
+
+    <div class="game"  onclick="showPopup(event, this)">
+        <img src="https://1.bp.blogspot.com/-oTPz0jXyvSU/XymzdAZkpRI/AAAAAAAAApg/tAy-Ce8nMNwus7jKBsfzoXUc4b1PWTd6ACLcBGAsYHQ/s1600/2.jpg">
+
+        <h2>Sniper Ghost Warrior Contracts 2</h2>
+        <p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / تكتيك</p>
+        <p class="bb" dir="rtl" lang="ar">الوصف: تجربة قنص دقيقة في بيئات معقدة مليئة بالتحديات.</p>
+        <p class="cc"></P>
+       <P class="dd"></p>
+        <p class="ss">Size: 20 GB</p>
+    </div>
+    
+
+    <div class="game"  onclick="showPopup(event, this)">
+        <img src="https://1.bp.blogspot.com/-3R-auHygzok/Ybxhx2t0ktI/AAAAAAAAMPM/zV4VxSa2lhEKruwMNuqRzJYPMcoEdyv-ACNcBGAsYHQ/h200/11.jpg">
+
+        <h2>Sonic Colors Ultimate</h2>
+        <p class="aa" dir="rtl" lang="ar">التصنيف: منصات / مغامرات</p>
+        <p class="bb" dir="rtl" lang="ar">الوصف: انطلق بسرعة خارقة في مغامرة مع سونيك وأصدقائه.</p>
+        <p class="cc"></P>
+       <P class="dd"></p>
+        <p class="ss">Size: 9 GB</p>
+    </div>
+    
+
+    <div class="game"  onclick="showPopup(event, this)">
+        <img src="https://1.bp.blogspot.com/-u_3mqtpBVjA/YGuvzfCVA5I/AAAAAAAAb0U/BmQVmbbJfO8BnvHM5J-5LsjKMTpdadPTACLcBGAsYHQ/s0/5.jpg">
+   
+        <h2>SpongeBob SquarePants</h2>
+     <p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+        <p class="bb" dir="rtl" lang="ar">الوصف: إعادة تقديم لمغامرة سبونج بوب الكلاسيكية بأسلوب حديث.</p>
+        <p class="cc"></P>
+       <P class="dd"></p>
+        <p class="ss">Size: 5 GB</p>
+    </div>
+    
+
+    <div class="game"  onclick="showPopup(event, this)">
+        <img src="https://2.bp.blogspot.com/-1uZzDauFA7A/XxUTgAJw2EI/AAAAAAAAESw/6rEWwgVQI9klVJJrzB_8xoMAKUZDrrZjgCLcBGAsYHQ/s1600/9.jpg">
+
+        <h2>Spyro Reignited Trilogy</h2>
+        <p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+        <p class="bb" dir="rtl" lang="ar">الوصف: ثلاثية كلاسيكية تعود بمغامرات التنين سبايرو برسومات محدثة.</p>
+        <p class="cc"></P>
+       <P class="dd"></p>
+        <p class="ss">Size: 42 GB</p>
+    </div>
+    
+
+    <div class="game"  onclick="showPopup(event, this)">
+        <img src="https://1.bp.blogspot.com/-Q3UmI3HLgNc/Yu46xDwVDjI/AAAAAAAAKMw/BsBPMCkKtKYfI21Xq37D_S3nSsLjRQdfQCNcBGAsYHQ/s0/3.jpg">
+   
+        <h2>Stray</h2>
+     <p class="aa" dir="rtl" lang="ar">التصنيف: مغامرات / ألغاز</p>
+        <p class="bb" dir="rtl" lang="ar">الوصف: تجربة فريدة تتبع قطة في عالم مستقبلي غامض.</p>
+        <p class="cc"></P>
+       <P class="dd"></p>
+        <p class="ss">Size: 7 GB</p>
+    </div>
+    
+
+    <div class="game"  onclick="showPopup(event, this)">
+        <img src="https://1.bp.blogspot.com/-vfShTRXiF7k/YCgDxKuSqiI/AAAAAAAAE2w/_DBI_cJhOfUQwEGHuNziMJ9aqSB5e-axACLcBGAsYHQ/s0/6.jpg">
+   
+        <h2>Streets of Rage 4</h2>
+     <p class="aa" dir="rtl" lang="ar">التصنيف: قتال / كلاسيكي</p>
+        <p class="bb" dir="rtl" lang="ar">الوصف: إعادة تقديم للعبة القتال الكلاسيكية برسومات وأسلوب لعب محدثين.</p>
+        <p class="cc"></P>
+       <P class="dd"></p>
+        <p class="ss">Size: 4 GB</p>
+    </div>
+    
+
+    <div class="game"  onclick="showPopup(event, this)">
+        <img src="https://1.bp.blogspot.com/-nWknsNM2G3M/XxhVVlIPqCI/AAAAAAAANFs/s0RvZpbcy-8orzSKd3u82IICLKzz-xukQCLcBGAsYHQ/s1600/4.jpg">
+
+        <h2>Team Sonic Racing</h2>
+        <p class="aa" dir="rtl" lang="ar">التصنيف: سباقات</p>
+        <p class="bb" dir="rtl" lang="ar">الوصف: انطلق بسيارات السباق مع شخصيات سونيك في منافسات ممتعة.</p>
+        <p class="cc"></P>
+       <P class="dd"></p>
+        <p class="ss">Size: 17 GB</p>
+    </div>
+    
+
+    <div class="game"  onclick="showPopup(event, this)">
+        <img src="https://1.bp.blogspot.com/-SGxiVxVhEnM/YA6Q6_iCSlI/AAAAAAAAbRY/hghn1oJadKc3jkAKitC6Up7Y65UCzoWOwCLcBGAsYHQ/s0/1.jpg">
+   
+        <h2>Tekken 7</h2>
+     <p class="aa" dir="rtl" lang="ar">التصنيف: قتال</p>
+        <p class="bb" dir="rtl" lang="ar">الوصف: جزء جديد من سلسلة تيكن مع تحسينات كبيرة في أسلوب اللعب والشخصيات.</p>
+        <p class="cc"></P>
+       <P class="dd"></p>
+        <p class="ss">Size: 60 GB</p>
+    </div>
+    
+
+    <div class="game"  onclick="showPopup(event, this)">
+        <img src="https://3.bp.blogspot.com/-Rmu45ER9SbM/Xx1CRtIiG9I/AAAAAAAAEsU/Ngku4JMirRUV7nqbgAYnL5DGBuPNgViagCLcBGAsYHQ/s1600/8.jpg">
+
+        <h2>Tennis World Tour</h2>
+        <p class="aa" dir="rtl" lang="ar">التصنيف: رياضة</p>
+        <p class="bb" dir="rtl" lang="ar">الوصف: تجربة تنس حقيقية مع لاعبين مشهورين وملاعب متنوعة.</p>
+        <p class="cc"></P>
+       <P class="dd"></p>
+        <p class="ss">Size: 20 GB</p>
+    </div>
+    
+
+    <div class="game"  onclick="showPopup(event, this)">
+        <img src="https://1.bp.blogspot.com/-f4IwhqilSRk/ZkRQjD_kAGI/AAAAAAAAAKM/nDrW8WC_BNQrzwMM-Lf0hdr_IUZI0PlFgCNcBGAsYHQ/s0/51.jpg">
+  
+        <h2>The Last of Us Part II</h2>
+      <p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+        <p class="bb" dir="rtl" lang="ar">الوصف: مغامرة عاطفية تحكي قصة النجاة والأمل في عالم ما بعد الكارثة.</p>
+        <p class="cc"></P>
+       <P class="dd"></p>
+        <p class="ss">Size: 100 GB</p>
+    </div>
+    
+
+    <div class="game"  onclick="showPopup(event, this)">
+        <img src="https://3.bp.blogspot.com/-x-6UC6CVOy8/WoVl_gUfiuI/AAAAAAAAK1Q/Emqv6Mu4jXwLbDc8B11EOabRpCvda3buQCLcBGAs/s1600/41.jpg">
+  
+        <h2>The Last of Us Remastered</h2>
+      <p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+        <p class="bb" dir="rtl" lang="ar">الوصف: نسخة محسنة من اللعبة الكلاسيكية التي تروي قصة النجاة.</p>
+        <p class="cc"></P>
+       <P class="dd"></p>
+        <p class="ss">Size: 50 GB</p>
+    </div>
+    
+
+    <div class="game"  onclick="showPopup(event, this)">
+        <img src="https://4.bp.blogspot.com/-EFBxgEszkkI/XxzQfODc24I/AAAAAAAAEoQ/ZhP_JVUsqqMYWWrXfznnMH4HALY6JDARACLcBGAsYHQ/s1600/8.jpg">
+
+        <h2>The LEGO Movie 2 Videogame</h2>
+        <p class="aa" dir="rtl" lang="ar">التصنيف: مغامرات / أطفال</p>
+        <p class="bb" dir="rtl" lang="ar">الوصف: مغامرات مستوحاة من فيلم ليغو المشهور بأسلوب لعب ممتع.</p>
+        <p class="cc"></P>
+       <P class="dd"></p>
+        <p class="ss">Size: 16 GB</p>
+    </div>
+    
+
+    <div class="game"  onclick="showPopup(event, this)">
+        <img src="https://1.bp.blogspot.com/-ZxzHykCvLLI/YkwQEj_bf7I/AAAAAAAAJb8/C-Uu7OKALqo_3aGIG_I9ersb2rxA4WTmgCNcBGAsYHQ/s0/13.jpg">
+  
+        <h2>Tom Clancy's Ghost Recon Wildlands</h2>
+      <p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / تصويب</p>
+        <p class="bb" dir="rtl" lang="ar">الوصف: لعبة تصويب تكتيكية مفتوحة العالم تحاكي قتال العصابات.</p>
+        <p class="cc"></P>
+       <P class="dd"></p>
+        <p class="ss">Size: 50 GB</p>
+    </div>
+    
+
+    <div class="game"  onclick="showPopup(event, this)">
+        <img src="https://1.bp.blogspot.com/--ppYdZqYmQY/X_WT22y8R7I/AAAAAAAAbCY/3LmvRpH9LGMY5nqIIfJfs6OnC2JrRYVoQCLcBGAsYHQ/s0/6.jpg">
+   
+        <h2>Truck Driver</h2>
+     <p class="aa" dir="rtl" lang="ar">التصنيف: محاكاة</p>
+        <p class="bb" dir="rtl" lang="ar">الوصف: لعبة محاكاة قيادة الشاحنات تتيح لك تطوير حياتك المهنية.</p>
+        <p class="cc"></P>
+       <P class="dd"></p>
+        <p class="ss">Size: 7 GB</p>
+    </div>
+    
+
+    <div class="game"  onclick="showPopup(event, this)">
+        <img src="https://3.bp.blogspot.com/-yJ2GLxhA3Rc/XxlSP45CAjI/AAAAAAAAEdg/PX5-MrB3EQ0-LjCdrpOdX4Xh_TN_7M18wCLcBGAsYHQ/s1600/2.jpg">
+
+        <h2>Unravel Two</h2>
+        <p class="aa" dir="rtl" lang="ar">التصنيف: ألغاز / مغامرات</p>
+        <p class="bb" dir="rtl" lang="ar">الوصف: مغامرة تعتمد على حل الألغاز في عالم جميل مليء بالتحديات.</p>
+        <p class="cc"></P>
+       <P class="dd"></p>
+        <p class="ss">Size: 4 GB</p>
+    </div>
+    
+
+    <div class="game"  onclick="showPopup(event, this)">
+        <img src="https://1.bp.blogspot.com/-rehq6QszShE/X-K5PiesBII/AAAAAAAAamI/7P_Gwvav4VYAiyZ91lmT5OBa499XZLbnACLcBGAsYHQ/s0/5.jpg">
+   
+        <h2>Vanquish</h2>
+     <p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / تصويب</p>
+        <p class="bb" dir="rtl" lang="ar">الوصف: لعبة تصويب سريعة الحركة بأجواء خيال علمي متقدمة.</p>
+        <p class="cc"></P>
+       <P class="dd"></p>
+        <p class="ss">Size: 10 GB</p>
+    </div>
+    
+
+    <div class="game"  onclick="showPopup(event, this)">
+        <img src="https://1.bp.blogspot.com/-5P7LPKOPQfw/WoVqMBrMx9I/AAAAAAAAK3E/eYOR7exDISI72Fcfb42w9PWkhvpntWfgwCLcBGAs/s1600/48.jpg">
+  
+        <h2>Watch Dogs 2</h2>
+      <p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / مغامرات</p>
+        <p class="bb" dir="rtl" lang="ar">الوصف: لعبة مفتوحة العالم حول قراصنة الكمبيوتر في مدينة سان فرانسيسكو.</p>
+        <p class="cc"></P>
+       <P class="dd"></p>
+        <p class="ss">Size: 50 GB</p>
+    </div>
+    
+
+    <div class="game"  onclick="showPopup(event, this)">
+        <img src="https://1.bp.blogspot.com/-Cubfoqzn2QY/ZALKXNxD9WI/AAAAAAAAJJA/v5rHhLnin5A0YD59MTbBC-jQEB4TQ71UQCNcBGAsYHQ/s0/1.jpg">
+   
+        <h2>Wo Long: Fallen Dynasty</h2>
+     <p class="aa" dir="rtl" lang="ar">التصنيف: أكشن / RPG</p>
+        <p class="bb" dir="rtl" lang="ar">الوصف: تجربة RPG في عالم مليء بالفنتازيا مع تحديات كبيرة.</p>
+        <p class="cc"></P>
+       <P class="dd"></p>
+        <p class="ss">Size: 40 GB</p>
+    </div>
+    
+
+    <div class="game"  onclick="showPopup(event, this)">
+        <img src="https://1.bp.blogspot.com/-ud1YlBNlvgA/ZBzv-bP7jhI/AAAAAAAAAwg/52dPKJGX7AICaN1dqeedwcceIeiYvgr2QCNcBGAsYHQ/s0/1.jpg">
+   
+        <h2>WWE 2K23</h2>
+     <p class="aa" dir="rtl" lang="ar">التصنيف: رياضة / قتال</p>
+        <p class="bb" dir="rtl" lang="ar">الوصف: لعبة مصارعة تضم شخصيات شهيرة وأساليب قتال متقدمة.</p>
+        <p class="cc"></P>
+       <P class="dd"></p>
+        <p class="ss">Size: 80 GB</p>
+    </div>
+    
+
+
+
+    <div class="overlay" id="overlay" onclick="hidePopup()"></div> <!-- Overlay for background dimming -->
+  
+  <div class="popup" id="popup">
+      <h2 id="popup-category"></h2>
+      <p id="popup-description"></p>
+      <p id="popup-additional"></p>
+      <p id="popup-release"></p>
+      <button onclick="hidePopup()">Close</button> <!-- Close button -->
+  </div>
+    <script>
+
+        // Function to toggle the dropdown menu
+    function toggleMenu() {
+      const menu = document.getElementById("dropdownMenu");
+      menu.classList.toggle("show"); // Add or remove the 'show' class
+    }
+
+    // Close the dropdown menu if clicked outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.menu-button')) {
+        const dropdowns = document.getElementsByClassName("menu-content");
+        for (let i = 0; i < dropdowns.length; i++) {
+          const openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+        function filterGames() {
+            const aa = document.getElementById("genreFilter").value;
+            const games = document.querySelectorAll(".game");
+            const isAll = aa === "all";
+
+            games.forEach(game => {
+                const genreText = game.querySelector(".aa").innerText;
+                game.style.display = isAll || genreText.includes(aa) ? "block" : "none";
+            });
+        }
+        const searchInput = document.getElementById('search');
+        const gamescontainer = document.getElementById('games-container');
+        const games = document.querySelectorAll('.game');
+
+        searchInput.addEventListener('input', () => {
+            const filter = searchInput.value.toLowerCase();
+            games.forEach(game => {
+                const title = game.querySelector('h2').textContent.toLowerCase();
+                game.style.display = title.includes(filter) ? '' : 'none';
+            });
+        });
+        function showPopup(event, gameElement) {
+          const popup = document.getElementById('popup');
+          const overlay = document.getElementById('overlay');
+  
+          // Get the details from the game card
+          const category = gameElement.querySelector('.aa').textContent;
+          const description = gameElement.querySelector('.bb').textContent;
+          const additionalInfo = gameElement.querySelector('.cc').textContent;
+          const releaseDate = gameElement.querySelector('.dd').textContent;
+  
+          // Update the popup content
+          document.getElementById('popup-category').textContent = category;
+          document.getElementById('popup-description').textContent = description;
+          document.getElementById('popup-additional').textContent = additionalInfo;
+          document.getElementById('popup-release').textContent = releaseDate;
+  
+          // Show the popup and overlay
+          popup.style.display = 'block';
+          overlay.style.display = 'block';
+      }
+  
+      function hidePopup() {
+          const popup = document.getElementById('popup');
+          const overlay = document.getElementById('overlay');
+          popup.style.display = 'none'; // Hide the popup
+          overlay.style.display = 'none'; // Hide the overlay
+      }
+  
+      // Ensure the close button works
+      document.addEventListener('DOMContentLoaded', () => {
+          const closeButton = document.querySelector('#popup button');
+          closeButton.addEventListener('click', hidePopup);
+      });
+      function showPopup(event, gameElement) {
+          const popup = document.getElementById('popup');
+          const overlay = document.getElementById('overlay');
+  
+          // Get the details from the game card
+          const category = gameElement.querySelector('.aa').textContent;
+          const description = gameElement.querySelector('.bb').textContent;
+          const additionalInfo = gameElement.querySelector('.cc').textContent;
+          const releaseDate = gameElement.querySelector('.dd').textContent;
+  
+          // Update the popup content
+          document.getElementById('popup-category').textContent = category;
+          document.getElementById('popup-description').textContent = description;
+          document.getElementById('popup-additional').textContent = additionalInfo;
+          document.getElementById('popup-release').textContent = releaseDate;
+  
+          // Show the popup and overlay
+          popup.style.display = 'block';
+          overlay.style.display = 'block';}
+          function hidePopup() {
+          const popup = document.getElementById('popup');
+          const overlay = document.getElementById('overlay');
+          popup.style.display = 'none'; // Hide the popup
+          overlay.style.display = 'none'; // Hide the overlay
+      }
+  
+      // Ensure the close button works
+      document.addEventListener('DOMContentLoaded', () => {
+          const closeButton = document.querySelector('#popup button');
+          closeButton.addEventListener('click', hidePopup);
+      });
+
+
+
+      document.addEventListener("DOMContentLoaded", () => {
+            function sortGames() {
+                // حدد الحاوية التي تحتوي على الألعاب
+                const gamesContainer = document.querySelector(".games-container");
+
+                // حدد جميع عناصر الألعاب
+                const games = Array.from(gamesContainer.getElementsByClassName("game"));
+
+                // فرز الألعاب أبجديًا حسب النص داخل <h2>
+                games.sort((a, b) => {
+                    const nameA = a.querySelector("h2").textContent.toLowerCase();
+                    const nameB = b.querySelector("h2").textContent.toLowerCase();
+                    return nameA.localeCompare(nameB);
+                });
+
+                // إعادة ترتيب الألعاب في الحاوية
+                games.forEach(game => gamesContainer.appendChild(game));
+            }
+
+            // استدعاء دالة الفرز عند تحميل الصفحة
+            sortGames();
+        });
+    </script>
+
+
+
+</body>
+</html>
